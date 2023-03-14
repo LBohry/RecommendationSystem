@@ -4,5 +4,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Recommendation System" />
+    <orderEntry type="module" module-name="Kaggle Dataset Files" />
   </component>
 </module>
