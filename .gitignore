@@ -10,3 +10,4 @@ df_full_cleaned_predicted_imdband
 *.csv
 *.xml
 *.iml
+/demopref_data
