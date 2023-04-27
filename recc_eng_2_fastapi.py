@@ -4,16 +4,32 @@ from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from fastapi import FastAPI
+import re
 
 app = FastAPI()
 
 
-# Load the saved Word2Vec model from a pickle file
-with open('wordembed_model.pkl', 'rb') as f1:
-    wordembed_model = pickle.load(f1)
-# Load the datafile from a pickle file
-with open('preprocessed_df.pkl', 'rb') as f2:
-    preprocessed_df = pickle.load(f2)
+# Assuming that we're using AWS S3 Buckets which have versioning enabled 
+
+##response = s3_client.list_objects_v2(Bucket=bucket_name)
+##objects = sorted(response['Contents'], key=lambda x: x['LastModified'], reverse=True)
+##
+##latest_object_key = None
+##for obj in objects:
+##    if re.match(r'courses_similarity_df_v.*\.csv', obj['Key']):
+##        latest_object_key = obj['Key']
+##        break
+##if latest_object_key is None:
+##    raise Exception("No similarity data found in the S3 bucket")
+##
+##
+##
+##with open("courses_similarity_df_latest.csv", "wb") as download_file:
+##    s3_client.download_fileobj(bucket_name, latest_object_key, download_file)
+##
+##
+##
+##similarity_df = pd.read_csv("courses_similarity_df_latest.csv")
 
 
 
