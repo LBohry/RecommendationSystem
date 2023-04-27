@@ -1,0 +1,1260 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template encoding-version="1.3">
+    <description></description>
+    <groupId>bdd91c63-0187-1000-2374-2e518ff375e5</groupId>
+    <name>Event-Based Content-Based Flow</name>
+    <snippet>
+        <connections>
+            <id>135223f5-385e-39ee-0000-000000000000</id>
+            <parentGroupId>5c7d0f97-e32c-3523-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>5c7d0f97-e32c-3523-0000-000000000000</groupId>
+                <id>7e886cdd-24d2-3290-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name>nostopwords -&gt; lemmetization</name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>5c7d0f97-e32c-3523-0000-000000000000</groupId>
+                <id>a520a62f-20cd-361e-0000-000000000000</id>
+                <type>PROCESSOR</type>
+                <versionedComponentId>a520a62f-20cd-361e-9069-10ee47e98f56</versionedComponentId>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>15a5e651-c40e-3438-0000-000000000000</id>
+            <parentGroupId>5c7d0f97-e32c-3523-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>5c7d0f97-e32c-3523-0000-000000000000</groupId>
+                <id>5f89b4be-7325-3ae9-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name>lemmetization -&gt; concat&amp;finalclean</name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>5c7d0f97-e32c-3523-0000-000000000000</groupId>
+                <id>7e886cdd-24d2-3290-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>6b5cf8c8-fb83-36e4-0000-000000000000</id>
+            <parentGroupId>5c7d0f97-e32c-3523-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>5c7d0f97-e32c-3523-0000-000000000000</groupId>
+                <id>a520a62f-20cd-361e-0000-000000000000</id>
+                <type>PROCESSOR</type>
+                <versionedComponentId>a520a62f-20cd-361e-9069-10ee47e98f56</versionedComponentId>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name>tokens -&gt; nostopwords</name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>5c7d0f97-e32c-3523-0000-000000000000</groupId>
+                <id>92a792f4-694a-3126-0000-000000000000</id>
+                <type>PROCESSOR</type>
+                <versionedComponentId>92a792f4-694a-3126-bb99-7a08493eba5e</versionedComponentId>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>830c6b5d-0cbd-38e5-0000-000000000000</id>
+            <parentGroupId>5c7d0f97-e32c-3523-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>5c7d0f97-e32c-3523-0000-000000000000</groupId>
+                <id>92a792f4-694a-3126-0000-000000000000</id>
+                <type>PROCESSOR</type>
+                <versionedComponentId>92a792f4-694a-3126-bb99-7a08493eba5e</versionedComponentId>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name>lowercase -&gt; tokens</name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>5c7d0f97-e32c-3523-0000-000000000000</groupId>
+                <id>16b94d2d-509a-3ae8-0000-000000000000</id>
+                <type>PROCESSOR</type>
+                <versionedComponentId>16b94d2d-509a-3ae8-a853-c9d3c454e482</versionedComponentId>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>d3173fe9-dbd6-3635-0000-000000000000</id>
+            <parentGroupId>5c7d0f97-e32c-3523-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>5c7d0f97-e32c-3523-0000-000000000000</groupId>
+                <id>246660d2-72f4-3eda-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name>similarities_calculation</name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>5c7d0f97-e32c-3523-0000-000000000000</groupId>
+                <id>5f89b4be-7325-3ae9-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>dd0dd3f8-d189-3f3e-0000-000000000000</id>
+            <parentGroupId>5c7d0f97-e32c-3523-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>5c7d0f97-e32c-3523-0000-000000000000</groupId>
+                <id>16b94d2d-509a-3ae8-0000-000000000000</id>
+                <type>PROCESSOR</type>
+                <versionedComponentId>16b94d2d-509a-3ae8-a853-c9d3c454e482</versionedComponentId>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>matched</selectedRelationships>
+            <source>
+                <groupId>5c7d0f97-e32c-3523-0000-000000000000</groupId>
+                <id>dde3ef89-56fe-3a19-0000-000000000000</id>
+                <type>PROCESSOR</type>
+                <versionedComponentId>dde3ef89-56fe-3a19-ad28-3be6e183fc35</versionedComponentId>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>ff56d220-95be-316f-0000-000000000000</id>
+            <parentGroupId>5c7d0f97-e32c-3523-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>5c7d0f97-e32c-3523-0000-000000000000</groupId>
+                <id>dde3ef89-56fe-3a19-0000-000000000000</id>
+                <type>PROCESSOR</type>
+                <versionedComponentId>dde3ef89-56fe-3a19-ad28-3be6e183fc35</versionedComponentId>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>5c7d0f97-e32c-3523-0000-000000000000</groupId>
+                <id>8181255b-4bf6-32b5-0000-000000000000</id>
+                <type>PROCESSOR</type>
+                <versionedComponentId>8181255b-4bf6-32b5-8523-b24ea5018a7e</versionedComponentId>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <processors>
+            <id>16b94d2d-509a-3ae8-0000-000000000000</id>
+            <parentGroupId>5c7d0f97-e32c-3523-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>616.0</y>
+            </position>
+            <versionedComponentId>16b94d2d-509a-3ae8-a853-c9d3c454e482</versionedComponentId>
+            <bundle>
+                <artifact>nifi-scripting-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.21.0</version>
+            </bundle>
+            <config>
+                <backoffMechanism>PENALIZE_FLOWFILE</backoffMechanism>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Script Engine</key>
+                        <value>
+                            <name>Script Engine</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Script File</key>
+                        <value>
+                            <name>Script File</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Script Body</key>
+                        <value>
+                            <name>Script Body</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Module Directory</key>
+                        <value>
+                            <name>Module Directory</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <maxBackoffPeriod>10 mins</maxBackoffPeriod>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Script Engine</key>
+                        <value>python</value>
+                    </entry>
+                    <entry>
+                        <key>Script File</key>
+                    </entry>
+                    <entry>
+                        <key>Script Body</key>
+                        <value>from org.apache.commons.io import IOUtils
+from java.nio.charset import StandardCharsets
+from org.apache.nifi.processor.io import StreamCallback
+
+class PyStreamCallback(StreamCallback):
+    def __init__(self):
+        pass
+
+    def process(self, inputStream, outputStream):
+        inputText = IOUtils.toString(inputStream, StandardCharsets.UTF_8)
+        # Perform text pre-processing on CourseTitle and CourseDescription attributes
+        course_title = flowFile.getAttribute('CourseTitle').lower()
+        course_description = flowFile.getAttribute('CourseDescription').lower()
+        
+        # Update the attributes with pre-processed text
+        flowFile = session.putAttribute(flowFile, 'CourseTitle', course_title)
+        flowFile = session.putAttribute(flowFile, 'CourseDescription', course_description)
+        
+        outputStream.write(bytearray(inputText.encode('utf-8')))
+
+flowFile = session.get()
+if flowFile:
+    flowFile = session.write(flowFile, PyStreamCallback())
+    session.transfer(flowFile, REL_SUCCESS)
+else:
+    session.transfer(flowFile, REL_FAILURE)
+</value>
+                    </entry>
+                    <entry>
+                        <key>Module Directory</key>
+                    </entry>
+                </properties>
+                <retryCount>10</retryCount>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>ExecuteScript</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>failure</name>
+                <retry>false</retry>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+                <retry>false</retry>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.script.ExecuteScript</type>
+        </processors>
+        <processors>
+            <id>246660d2-72f4-3eda-0000-000000000000</id>
+            <parentGroupId>5c7d0f97-e32c-3523-0000-000000000000</parentGroupId>
+            <position>
+                <x>808.0</x>
+                <y>1288.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-scripting-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.21.0</version>
+            </bundle>
+            <config>
+                <backoffMechanism>PENALIZE_FLOWFILE</backoffMechanism>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Script Engine</key>
+                        <value>
+                            <name>Script Engine</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Script File</key>
+                        <value>
+                            <name>Script File</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Script Body</key>
+                        <value>
+                            <name>Script Body</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Module Directory</key>
+                        <value>
+                            <name>Module Directory</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <maxBackoffPeriod>10 mins</maxBackoffPeriod>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Script Engine</key>
+                        <value>python</value>
+                    </entry>
+                    <entry>
+                        <key>Script File</key>
+                    </entry>
+                    <entry>
+                        <key>Script Body</key>
+                        <value>import pickle
+import pandas as pd
+import numpy as np
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from sklearn.metrics.pairwise import cosine_similarity
+import boto3
+### we assume that the word2vec model, the preprocessed_df, the embeddings matrix, and the similarities matrix, are stored as s3 objects
+
+# Load the saved Word2Vec model from a pickle file
+with open('wordembed_model.pkl', 'rb') as f1:
+    wordembed_model = pickle.load(f1)
+
+# Read the pickle file
+with open('dict_txt_dat', 'rb') as f:
+    dict_txt_data = pickle.load(f)
+
+# Convert the data into a DataFrame-like structure
+new_row_df = pd.DataFrame(dict_txt_data)
+
+
+# Fetch the latest version of the embeddings matrix from the S3 bucket
+s3 = boto3.client('s3')
+s3.download_file('your_bucket_name', 'your_embeddings_matrix_key', 'local_embeddings_matrix.pkl')
+
+# Load the existing embeddings matrix
+with open('local_embeddings_matrix.pkl', 'rb') as f:
+    existing_embeddings_matrix = pickle.load(f)
+
+# Fetch the old dataset from the S3 bucket
+s3 = boto3.client('s3')
+s3.download_file('your_bucket_name', 'your_old_dataset_key', 'local_old_dataset.pkl')
+
+# Load the old dataset
+with open('local_old_dataset.pkl', 'rb') as f:
+    old_dataset = pickle.load(f)
+
+# Concatenate the new row to the old dataset
+updated_dataset = pd.concat([old_dataset, new_row_df], ignore_index=True)
+
+
+
+max_len = max([len(row) for row in existing_embeddings_matrix])
+
+
+# Function for calculating padded embeddings
+def get_padded_embedding(words):
+    embedding = np.concatenate([wordembed_model.wv[word] for word in words])
+    padded_embedding = pad_sequences([embedding.reshape(1,-1).T], maxlen=max_len, dtype='float32', padding='post').reshape(1, max_len)
+    return padded_embedding
+
+# Calculate embeddings for the concatenated_text
+new_embeddings = get_padded_embedding(new_row_df.loc[0, 'concatenated_text'])
+
+
+# Get the new row's max_len
+new_row_max_len = len(new_embeddings[0])
+
+
+# Check if the new row's embeddings length is larger than the current max_len
+if new_row_max_len &gt; max_len:
+    # Update the existing embeddings matrix with the new max_len
+    existing_embeddings_matrix = pad_sequences(existing_embeddings_matrix, maxlen=new_row_max_len, dtype='float32', padding='post')
+
+
+
+# Calculate embeddings for the concatenated_text column
+updated_embeddings_matrix = np.vstack([existing_embeddings_matrix, new_embeddings)
+
+
+
+# Calculate the cosine similarity matrix
+similarity_matrix = cosine_similarity(updated_embeddings_matrix)
+
+# Create a DataFrame for the similarity matrix
+course_ids = updated_dataset['CourseId'].tolist()
+similarity_df = pd.DataFrame(similarity_matrix, index=course_ids, columns=course_ids)
+
+
+
+
+# Save the updated concatenated dataset, embeddings matrix, and similarities matrix to the S3 bucket
+with open('local_updated_dataset.pkl', 'wb') as f:
+    pickle.dump(updated_dataset, f)
+s3.upload_file('local_updated_dataset.pkl', 'your_bucket_name', 'your_updated_dataset_key')
+
+with open('local_updated_embeddings_matrix.pkl', 'wb') as f:
+    pickle.dump(updated_embeddings_matrix, f)
+s3.upload_file('local_updated_embeddings_matrix.pkl', 'your_bucket_name', 'your_updated_embeddings_matrix_key')
+
+with open('local_updated_similarities_matrix.pkl', 'wb') as f:
+    pickle.dump(similarity_df, f)
+s3.upload_file('local_updated_similarities_matrix.pkl', 'your_bucket_name', 'your_updated_similarities_matrix_key')</value>
+                    </entry>
+                    <entry>
+                        <key>Module Directory</key>
+                    </entry>
+                </properties>
+                <retryCount>10</retryCount>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>ExecuteScript</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>failure</name>
+                <retry>false</retry>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+                <retry>false</retry>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.script.ExecuteScript</type>
+        </processors>
+        <processors>
+            <id>5f89b4be-7325-3ae9-0000-000000000000</id>
+            <parentGroupId>5c7d0f97-e32c-3523-0000-000000000000</parentGroupId>
+            <position>
+                <x>1208.0</x>
+                <y>880.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-scripting-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.21.0</version>
+            </bundle>
+            <config>
+                <backoffMechanism>PENALIZE_FLOWFILE</backoffMechanism>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Script Engine</key>
+                        <value>
+                            <name>Script Engine</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Script File</key>
+                        <value>
+                            <name>Script File</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Script Body</key>
+                        <value>
+                            <name>Script Body</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Module Directory</key>
+                        <value>
+                            <name>Module Directory</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <maxBackoffPeriod>10 mins</maxBackoffPeriod>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Script Engine</key>
+                        <value>python</value>
+                    </entry>
+                    <entry>
+                        <key>Script File</key>
+                    </entry>
+                    <entry>
+                        <key>Script Body</key>
+                        <value>from org.apache.commons.io import IOUtils
+from java.nio.charset import StandardCharsets
+from org.apache.nifi.processor.io import StreamCallback
+
+class PyStreamCallback(StreamCallback):
+    def __init__(self):
+        pass
+
+    def process(self, inputStream, outputStream):
+        inputText = IOUtils.toString(inputStream, StandardCharsets.UTF_8)
+        
+        course_id = flowFile.getAttribute('CourseId')
+        title_lemmatized = flowFile.getAttribute('CourseTitle_lemmatized')
+        description_lemmatized = flowFile.getAttribute('CourseDescription_lemmatized')
+        
+        concatenated_text = title_lemmatized + ' ' + description_lemmatized
+        tokenized_text = concatenated_text.split()
+
+        dict_txt_data = {course_id: tokenized_text}
+        with open('dict_txt_data.pickle', 'wb') as f:
+            pickle.dump(dict_txt_data, f)
+                    
+		flowFile = session.putAttribute(flowFile, 'Concatenated_text', concatenated_text)
+
+flowFile = session.get()
+if flowFile:
+    flowFile = session.write(flowFile, PyStreamCallback())
+    session.transfer(flowFile, REL_SUCCESS)
+else:
+    session.transfer(flowFile, REL_FAILURE)
+</value>
+                    </entry>
+                    <entry>
+                        <key>Module Directory</key>
+                    </entry>
+                </properties>
+                <retryCount>10</retryCount>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>ExecuteScript</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>failure</name>
+                <retry>false</retry>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+                <retry>false</retry>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.script.ExecuteScript</type>
+        </processors>
+        <processors>
+            <id>7e886cdd-24d2-3290-0000-000000000000</id>
+            <parentGroupId>5c7d0f97-e32c-3523-0000-000000000000</parentGroupId>
+            <position>
+                <x>808.0</x>
+                <y>880.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-scripting-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.21.0</version>
+            </bundle>
+            <config>
+                <backoffMechanism>PENALIZE_FLOWFILE</backoffMechanism>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Script Engine</key>
+                        <value>
+                            <name>Script Engine</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Script File</key>
+                        <value>
+                            <name>Script File</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Script Body</key>
+                        <value>
+                            <name>Script Body</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Module Directory</key>
+                        <value>
+                            <name>Module Directory</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <maxBackoffPeriod>10 mins</maxBackoffPeriod>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Script Engine</key>
+                        <value>python</value>
+                    </entry>
+                    <entry>
+                        <key>Script File</key>
+                    </entry>
+                    <entry>
+                        <key>Script Body</key>
+                        <value>from org.apache.commons.io import IOUtils
+from java.nio.charset import StandardCharsets
+from org.apache.nifi.processor.io import StreamCallback
+import nltk
+from nltk.stem import WordNetLemmatizer
+nltk.download('omw-1.4')
+nltk.download('wordnet')
+lemmatizer = WordNetLemmatizer()
+
+class PyStreamCallback(StreamCallback):
+    def __init__(self):
+        pass
+
+    def process(self, inputStream, outputStream):
+        inputText = IOUtils.toString(inputStream, StandardCharsets.UTF_8)
+        
+        title_no_stop = flowFile.getAttribute('CourseTitle_noStop').split()
+        description_no_stop = flowFile.getAttribute('CourseDescription_noStop').split()
+        
+        title_lemmatized = [lemmatizer.lemmatize(word) for word in title_no_stop]
+        description_lemmatized = [lemmatizer.lemmatize(word) for word in description_no_stop]
+        
+        flowFile = session.putAttribute(flowFile, 'CourseTitle_lemmatized', ' '.join(title_lemmatized))
+        flowFile = session.putAttribute(flowFile, 'CourseDescription_lemmatized', ' '.join(description_lemmatized))
+        
+        outputStream.write(bytearray(inputText.encode('utf-8')))
+
+flowFile = session.get()
+if flowFile:
+    flowFile = session.write(flowFile, PyStreamCallback())
+    session.transfer(flowFile, REL_SUCCESS)
+else:
+    session.transfer(flowFile, REL_FAILURE)
+</value>
+                    </entry>
+                    <entry>
+                        <key>Module Directory</key>
+                    </entry>
+                </properties>
+                <retryCount>10</retryCount>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>ExecuteScript</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>failure</name>
+                <retry>false</retry>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+                <retry>false</retry>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.script.ExecuteScript</type>
+        </processors>
+        <processors>
+            <id>8181255b-4bf6-32b5-0000-000000000000</id>
+            <parentGroupId>5c7d0f97-e32c-3523-0000-000000000000</parentGroupId>
+            <position>
+                <x>400.0</x>
+                <y>0.0</y>
+            </position>
+            <versionedComponentId>8181255b-4bf6-32b5-8523-b24ea5018a7e</versionedComponentId>
+            <bundle>
+                <artifact>nifi-amqp-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.21.0</version>
+            </bundle>
+            <config>
+                <backoffMechanism>PENALIZE_FLOWFILE</backoffMechanism>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Queue</key>
+                        <value>
+                            <name>Queue</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>auto.acknowledge</key>
+                        <value>
+                            <name>auto.acknowledge</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>batch.size</key>
+                        <value>
+                            <name>batch.size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>remove.curly.braces</key>
+                        <value>
+                            <name>remove.curly.braces</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>header.separator</key>
+                        <value>
+                            <name>header.separator</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Brokers</key>
+                        <value>
+                            <name>Brokers</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Host Name</key>
+                        <value>
+                            <name>Host Name</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Port</key>
+                        <value>
+                            <name>Port</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Virtual Host</key>
+                        <value>
+                            <name>Virtual Host</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>User Name</key>
+                        <value>
+                            <name>User Name</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Password</key>
+                        <value>
+                            <name>Password</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>AMQP Version</key>
+                        <value>
+                            <name>AMQP Version</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>ssl-context-service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+                            <name>ssl-context-service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>cert-authentication</key>
+                        <value>
+                            <name>cert-authentication</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>ssl-client-auth</key>
+                        <value>
+                            <name>ssl-client-auth</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <maxBackoffPeriod>10 mins</maxBackoffPeriod>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Queue</key>
+                    </entry>
+                    <entry>
+                        <key>auto.acknowledge</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>batch.size</key>
+                        <value>10</value>
+                    </entry>
+                    <entry>
+                        <key>remove.curly.braces</key>
+                        <value>False</value>
+                    </entry>
+                    <entry>
+                        <key>header.separator</key>
+                        <value>,</value>
+                    </entry>
+                    <entry>
+                        <key>Brokers</key>
+                    </entry>
+                    <entry>
+                        <key>Host Name</key>
+                        <value>localhost</value>
+                    </entry>
+                    <entry>
+                        <key>Port</key>
+                        <value>5672</value>
+                    </entry>
+                    <entry>
+                        <key>Virtual Host</key>
+                    </entry>
+                    <entry>
+                        <key>User Name</key>
+                    </entry>
+                    <entry>
+                        <key>Password</key>
+                    </entry>
+                    <entry>
+                        <key>AMQP Version</key>
+                        <value>0.9.1</value>
+                    </entry>
+                    <entry>
+                        <key>ssl-context-service</key>
+                    </entry>
+                    <entry>
+                        <key>cert-authentication</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>ssl-client-auth</key>
+                        <value>NONE</value>
+                    </entry>
+                </properties>
+                <retryCount>10</retryCount>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>ConsumeAMQP</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+                <retry>false</retry>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.amqp.processors.ConsumeAMQP</type>
+        </processors>
+        <processors>
+            <id>92a792f4-694a-3126-0000-000000000000</id>
+            <parentGroupId>5c7d0f97-e32c-3523-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>880.0</y>
+            </position>
+            <versionedComponentId>92a792f4-694a-3126-bb99-7a08493eba5e</versionedComponentId>
+            <bundle>
+                <artifact>nifi-scripting-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.21.0</version>
+            </bundle>
+            <config>
+                <backoffMechanism>PENALIZE_FLOWFILE</backoffMechanism>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Script Engine</key>
+                        <value>
+                            <name>Script Engine</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Script File</key>
+                        <value>
+                            <name>Script File</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Script Body</key>
+                        <value>
+                            <name>Script Body</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Module Directory</key>
+                        <value>
+                            <name>Module Directory</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <maxBackoffPeriod>10 mins</maxBackoffPeriod>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Script Engine</key>
+                        <value>python</value>
+                    </entry>
+                    <entry>
+                        <key>Script File</key>
+                    </entry>
+                    <entry>
+                        <key>Script Body</key>
+                        <value>from org.apache.commons.io import IOUtils
+from java.nio.charset import StandardCharsets
+from org.apache.nifi.processor.io import StreamCallback
+import nltk
+from nltk.tokenize import word_tokenize
+
+class PyStreamCallback(StreamCallback):
+    def __init__(self):
+        pass
+
+    def process(self, inputStream, outputStream):
+        inputText = IOUtils.toString(inputStream, StandardCharsets.UTF_8)
+        
+        course_title = flowFile.getAttribute('CourseTitle')
+        course_description = flowFile.getAttribute('CourseDescription')
+        
+        title_tokens = word_tokenize(course_title)
+        description_tokens = word_tokenize(course_description)
+        
+        flowFile = session.putAttribute(flowFile, 'CourseTitle_tokens', ' '.join(title_tokens))
+        flowFile = session.putAttribute(flowFile, 'Description_tokens', ' '.join(description_tokens))
+        
+        outputStream.write(bytearray(inputText.encode('utf-8')))
+
+flowFile = session.get()
+if flowFile:
+    flowFile = session.write(flowFile, PyStreamCallback())
+    session.transfer(flowFile, REL_SUCCESS)
+else:
+    session.transfer(flowFile, REL_FAILURE)
+</value>
+                    </entry>
+                    <entry>
+                        <key>Module Directory</key>
+                    </entry>
+                </properties>
+                <retryCount>10</retryCount>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>ExecuteScript</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>failure</name>
+                <retry>false</retry>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+                <retry>false</retry>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.script.ExecuteScript</type>
+        </processors>
+        <processors>
+            <id>a520a62f-20cd-361e-0000-000000000000</id>
+            <parentGroupId>5c7d0f97-e32c-3523-0000-000000000000</parentGroupId>
+            <position>
+                <x>400.0</x>
+                <y>880.0</y>
+            </position>
+            <versionedComponentId>a520a62f-20cd-361e-9069-10ee47e98f56</versionedComponentId>
+            <bundle>
+                <artifact>nifi-scripting-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.21.0</version>
+            </bundle>
+            <config>
+                <backoffMechanism>PENALIZE_FLOWFILE</backoffMechanism>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Script Engine</key>
+                        <value>
+                            <name>Script Engine</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Script File</key>
+                        <value>
+                            <name>Script File</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Script Body</key>
+                        <value>
+                            <name>Script Body</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Module Directory</key>
+                        <value>
+                            <name>Module Directory</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <maxBackoffPeriod>10 mins</maxBackoffPeriod>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Script Engine</key>
+                        <value>python</value>
+                    </entry>
+                    <entry>
+                        <key>Script File</key>
+                    </entry>
+                    <entry>
+                        <key>Script Body</key>
+                        <value>from org.apache.commons.io import IOUtils
+from java.nio.charset import StandardCharsets
+from org.apache.nifi.processor.io import StreamCallback
+import nltk
+from nltk.corpus import stopwords
+
+nltk.download('stopwords')
+stop_words = set(stopwords.words('english'))
+
+class PyStreamCallback(StreamCallback):
+    def __init__(self):
+        pass
+
+    def process(self, inputStream, outputStream):
+        inputText = IOUtils.toString(inputStream, StandardCharsets.UTF_8)
+        
+        title_tokens = flowFile.getAttribute('CourseTitle_tokens').split()
+        description_tokens = flowFile.getAttribute('CourseDescription_tokens').split()
+        
+        title_no_stop = [word for word in title_tokens if word not in stop_words]
+        description_no_stop = [word for word in description_tokens if word not in stop_words]
+        
+        flowFile = session.putAttribute(flowFile, 'CourseTitle_noStop', ' '.join(title_no_stop))
+        flowFile = session.putAttribute(flowFile, 'CourseDescription_noStop', ' '.join(description_no_stop))
+        
+        outputStream.write(bytearray(inputText.encode('utf-8')))
+
+flowFile = session.get()
+if flowFile:
+    flowFile = session.write(flowFile, PyStreamCallback())
+    session.transfer(flowFile, REL_SUCCESS)
+else:
+    session.transfer(flowFile, REL_FAILURE)
+</value>
+                    </entry>
+                    <entry>
+                        <key>Module Directory</key>
+                    </entry>
+                </properties>
+                <retryCount>10</retryCount>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>ExecuteScript</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>failure</name>
+                <retry>false</retry>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+                <retry>false</retry>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.script.ExecuteScript</type>
+        </processors>
+        <processors>
+            <id>dde3ef89-56fe-3a19-0000-000000000000</id>
+            <parentGroupId>5c7d0f97-e32c-3523-0000-000000000000</parentGroupId>
+            <position>
+                <x>368.0</x>
+                <y>336.0</y>
+            </position>
+            <versionedComponentId>dde3ef89-56fe-3a19-ad28-3be6e183fc35</versionedComponentId>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.21.0</version>
+            </bundle>
+            <config>
+                <backoffMechanism>PENALIZE_FLOWFILE</backoffMechanism>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Destination</key>
+                        <value>
+                            <name>Destination</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Return Type</key>
+                        <value>
+                            <name>Return Type</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Path Not Found Behavior</key>
+                        <value>
+                            <name>Path Not Found Behavior</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Null Value Representation</key>
+                        <value>
+                            <name>Null Value Representation</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>CourseDescription</key>
+                        <value>
+                            <name>CourseDescription</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>CourseId</key>
+                        <value>
+                            <name>CourseId</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>CourseTitle</key>
+                        <value>
+                            <name>CourseTitle</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <maxBackoffPeriod>10 mins</maxBackoffPeriod>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Destination</key>
+                        <value>flowfile-content</value>
+                    </entry>
+                    <entry>
+                        <key>Return Type</key>
+                        <value>json</value>
+                    </entry>
+                    <entry>
+                        <key>Path Not Found Behavior</key>
+                        <value>ignore</value>
+                    </entry>
+                    <entry>
+                        <key>Null Value Representation</key>
+                        <value>empty string</value>
+                    </entry>
+                    <entry>
+                        <key>CourseDescription</key>
+                        <value>$.CourseDescription</value>
+                    </entry>
+                    <entry>
+                        <key>CourseId</key>
+                        <value>$.CourseId</value>
+                    </entry>
+                    <entry>
+                        <key>CourseTitle</key>
+                        <value>$.CourseTitle</value>
+                    </entry>
+                </properties>
+                <retryCount>10</retryCount>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>EvaluateJsonPath</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>failure</name>
+                <retry>false</retry>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>matched</name>
+                <retry>false</retry>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>unmatched</name>
+                <retry>false</retry>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.EvaluateJsonPath</type>
+        </processors>
+    </snippet>
+    <timestamp>04/27/2023 20:41:13 WAT</timestamp>
+</template>

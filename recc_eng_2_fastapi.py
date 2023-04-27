@@ -20,7 +20,7 @@ app = FastAPI()
 ##        latest_object_key = obj['Key']
 ##        break
 ##if latest_object_key is None:
-##    raise Exception("No similarity data found in the S3 bucket")
+##    raise Exception("No similarity dataframe found in the S3 bucket")
 ##
 ##
 ##
