@@ -1,10 +1,8 @@
 import pandas as pd
-import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from fastapi import FastAPI
-import re
 
 app = FastAPI()
 

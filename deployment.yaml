@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workspacepfe-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: workspacepfe
+  template:
+    metadata:
+      labels:
+        app: workspacepfe
+    spec:
+      containers:
+        - name: workspacepfe
+          image: workspacepfe/recc_2_img
+          ports:
+            - containerPort: 80
