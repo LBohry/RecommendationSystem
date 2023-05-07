@@ -1,7 +1,7 @@
 import pandas as pd
+import pickle 
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -35,6 +35,12 @@ app = FastAPI()
  
 file_name = 'courses_similarity_df.pkl'
 similarity_df = pd.read_pickle(file_name)
+distance_matrix = 1 - similarity_df
+
+courses_data = pd.read_pickle('preprocessed_df_withclusters.pkl')
+with open("diverse_default_recommendations_dict_spectral.pkl", "rb") as f:
+    loaded_course_dict = pickle.load(f)
+
 
 
 @app.get('/recommend-courses/{course_id}')
@@ -47,3 +53,6 @@ async def get_recommendations(course_id: str):
     return {'recommended_courses': top_20_similar_courses}
 
 
+@app.get('/recommend-default-courses')
+async def get_diverse_recommendations():
+    return loaded_course_dict
