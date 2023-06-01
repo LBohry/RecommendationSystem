@@ -50,15 +50,15 @@ app = FastAPI()
 
 # Load the courses_similarity dataframe (this is built in in pandas, more efficient way to load pkl files :) )
  
-file_name = 'courses_similarity_df.pkl'
+file_name = '/Actively Loaded Files/courses_similarity_df.pkl'
 similarity_df = pd.read_pickle(file_name)
 distance_matrix = 1 - similarity_df
 
-quantia_similarities_df = pd.read_pickle('quantia_similarities_df.pkl')
-quantia_dataset_cleaned = pd.read_pickle('quantia_dataset_cleaned.pkl')
+quantia_similarities_df = pd.read_pickle('/Actively Loaded Files/quantia_similarities_df.pkl')
+quantia_dataset_cleaned = pd.read_pickle('/Actively Loaded Files/quantia_dataset_cleaned.pkl')
 
-courses_data = pd.read_pickle('preprocessed_df_withclusters.pkl')
-with open("diverse_default_recommendations_dict_spectral.pkl", "rb") as f:
+courses_data = pd.read_pickle('/Actively Loaded Files/preprocessed_df_withclusters.pkl')
+with open("/Actively Loaded Files/diverse_default_recommendations_dict_spectral.pkl", "rb") as f:
     loaded_course_dict = pickle.load(f)
 
 
@@ -67,10 +67,10 @@ with open("diverse_default_recommendations_dict_spectral.pkl", "rb") as f:
 async def get_recommendations(course_id: str):
 
     target_course_similarity = similarity_df.loc[course_id]
-    top_20_similar_courses = target_course_similarity.sort_values(ascending=False).head(21)[1:]
-    top_20_similar_courses = top_20_similar_courses.to_dict()
+    top_5_similar_courses = target_course_similarity.sort_values(ascending=False).head(6)[1:]
+    top_5_similar_courses = top_5_similar_courses.to_dict()
 
-    return {'recommended_courses': top_20_similar_courses}
+    return {'recommended_courses': top_5_similar_courses}
 
 @app.get('/recommend-courses/MED/{course_id}')
 async def get_recommendations(course_id: int):

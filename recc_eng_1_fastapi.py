@@ -6,9 +6,9 @@ from sklearn.cluster import KMeans
 from fastapi import FastAPI, Request
 
 
-demopref_data = pd.read_csv('demopref_data')
-U_I_merged_df = pd.read_csv('U_I_merged_df')
-user_item_matrix = pd.read_pickle('user_item_matrix.pkl')
+demopref_data = pd.read_csv('/Actively Loaded Files/demopref_data_v2')
+U_I_merged_df = pd.read_csv('/Actively Loaded Files/U_I_merged_df')
+user_item_matrix = pd.read_pickle('/Actively Loaded Files/user_item_matrix.pkl')
 
 # Loading the demopref kmeans model
 with open('kmeans_model.pkl', 'rb') as f:
@@ -67,13 +67,15 @@ def recommend_courses(student_id, demopref_data, user_similarity):
 
         # filter the similar students based on their cluster label
 
-        similar_students = demopref_data.loc[(demopref_data['cluster_label'] == target_student_cluster & demopref_data['id_student'].isin(similar_students))]
+        similar_students = demopref_data.loc[(demopref_data['cluster_label'] == target_student_cluster 
+                                              & demopref_data['id_student'].isin(similar_students))]
 
         # Find the courses that are most frequently taken by the filtered similar students
         freq_courses = similar_students.iloc[:, :7].sum().dropna().sort_values(ascending=False)
         freq_courses = freq_courses[freq_courses != 0].nlargest(3)
 
-        # Recommend the courses that the target student has not taken yet but are among the most frequently taken courses by the filtered similar students
+        # Recommend the courses that the target student has not taken yet 
+        # but are among the most frequently taken courses by the filtered similar students
         target_student_courses = demopref_data.loc[demopref_data['id_student'] == student_id].iloc[0, :7]
         recommended_courses = freq_courses[~target_student_courses.astype(bool)].index.tolist()
         print(f"Recommended courses for student {student_id}: {recommended_courses}")
